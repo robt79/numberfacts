@@ -23,6 +23,7 @@
             <p>Enter a number and get a random fact</p>
             <input type="number" class="form-control form-control-lg" id="numberInput" placeholder="Enter any number...">
             <div id="fact" class="card-body">
+              <br>
               <h4 class="card-title">
                 Number Fact
               </h4>
@@ -37,11 +38,9 @@
     <script>
       let fact = document.querySelector('#fact');
       let factText = document.querySelector('#factText');
-
       let numberInput = document.querySelector('#numberInput');
       // numberInput.addEventListener('input', getFactAjax);
         numberInput.addEventListener('input', getFactFetch);
-
       // function getFactAjax(){
       //   let number = numberInput.value;
       //
@@ -56,10 +55,8 @@
       //   }
       //   xhr.send();
       // }
-
       function getFactFetch(){
         let number = numberInput.value;
-
         fetch('http://numbersapi.com/'+number)
           .then(response => response.text())
           .then(data => {
@@ -70,7 +67,6 @@
           })
           .catch(err => console.log(err));
       }
-
     </script>
   </body>
 </html>
